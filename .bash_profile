@@ -49,11 +49,15 @@ alias reload='source ~/.bash_profile'
 ###############################
 ### ENVIRONMENTAL VARIABLES ###
 ###############################
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
 
 # Add personal bin to PATH variable
 export PATH=$PATH:/Users/michellehwang/bin:/usr/local/bin;
 
 # Change prompt
 PS1_OLD=${PS1}
-export PS1='\[\033[1;91m\][\t]\[\033[0m\] \[\033[1;94m\]\u\[\033[0m\]:\[\033[1;92m\]\w\[\033[0m\] \[\033[1;97m\]$ '
+export PS1='\[\033[1;91m\][\t]\[\033[0m\] \[\033[1;94m\]\u\[\033[0m\]:\[\033[1;92m\]\w\[\033[0m\]\[\033[1;91m\]$(parse_git_branch)\[\033[0m\]\[\033[1;97m\] $ '
+
 #(__git_ps1 "(%s)")\[\033[0m\]$ '
