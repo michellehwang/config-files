@@ -1,8 +1,11 @@
 export CLICOLOR=1
-alias cs61a='cd ~/Dropbox/cs61a/cs61a-python'
+
 ##################
 ### MY ALIASES ###
 ##################
+alias 61a='cd ~/Dropbox/cs61a/cs61a-python'
+alias vim='mvim -v'
+alias pyserv='python -m SimpleHTTPServer'
 
 # git command autocompletion script
 #source ~/bin/git-completion.bash
@@ -26,7 +29,7 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
 # simple ip
-alias ip='ifconfig | grep "inet " | grep -v 127.0.0.1 | cut -d\ -f2'
+alias ip='wget -qO- http://ipecho.net/plain | pbcopy'
 # more details
 alias ip1="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 # external ip
@@ -34,11 +37,6 @@ alias ip2="curl -s http://www.showmyip.com/simple/ | awk '{print $1}'"
 
 # grep with color
 alias grep='grep --color=auto'
-
-# proxy tunnel
-#alias proxy='ssh -D XXXX -p XXXX USER@DOMAIN'
-# ssh home
-#alias sshome='ssh -p XXXX USER@DOMAIN'
 
 # processes
 #alias ps='ps -ax'
@@ -54,10 +52,10 @@ parse_git_branch() {
 }
 
 # Add personal bin to PATH variable
-export PATH=$PATH:/Users/michellehwang/bin:/usr/local/bin;
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH=$PATH:/Users/michellehwang/bin:/usr/local/bin:/usr/bin/ruby;
 
 # Change prompt
 PS1_OLD=${PS1}
 export PS1='\[\033[1;91m\][\t]\[\033[0m\] \[\033[1;94m\]\u\[\033[0m\]:\[\033[1;92m\]\w\[\033[0m\]\[\033[1;91m\]$(parse_git_branch)\[\033[0m\]\[\033[1;97m\] $ '
 
-#(__git_ps1 "(%s)")\[\033[0m\]$ '
