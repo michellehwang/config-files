@@ -1,23 +1,8 @@
 export CLICOLOR=1
 
 ##################
-### MY ALIASES ###
+### NAVIGATION ###
 ##################
-alias 61a='cd ~/Dropbox/cs61a/cs61a-python'
-alias vim='mvim -v'
-alias pyserv='python -m SimpleHTTPServer'
-
-# git command autocompletion script
-#source ~/bin/git-completion.bash
-
-# git commamands simplified
-alias gst='git status'
-alias gco='git checkout'
-alias gci='git commit'
-alias grb='git rebase'
-alias gbr='git branch'
-alias glg='git log --date-order --all --graph --format="%C(green)%h%Creset %C(yellow)%an%Creset %C(blue bold)%ar%Creset %C(red bold)%d%Creset%s"'
-alias glg2='git log --date-order --all --graph --name-status --format="%C(green)%H%Creset %C(yellow)%an%Creset %C(blue bold)%ar%Creset %C(red bold)%d%Creset%s"'
 
 # lock computer
 alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
@@ -27,6 +12,19 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
+
+#######################
+### VERSION CONTROL ###
+#######################
+
+# git commamands simplified
+alias gst='git status'
+alias gco='git checkout'
+alias gci='git commit'
+alias grb='git rebase'
+alias gbr='git branch'
+alias glg='git log --date-order --all --graph --format="%C(green)%h%Creset %C(yellow)%an%Creset %C(blue bold)%ar%Creset %C(red bold)%d%Creset%s"'
+alias glg2='git log --date-order --all --graph --name-status --format="%C(green)%H%Creset %C(yellow)%an%Creset %C(blue bold)%ar%Creset %C(red bold)%d%Creset%s"'
 
 # simple ip
 alias ip='wget -qO- http://ipecho.net/plain | pbcopy'
